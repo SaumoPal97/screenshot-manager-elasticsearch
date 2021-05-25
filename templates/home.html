@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Screenshot Manager</title>
+  </head>
+  <body>
+    {% extends "template.html" %} {% block content %}
+    <div class="container centered">
+      <div class="columns" style="margin-left: 15%; margin-right: 15%">
+        {% for d in data['results'] %}
+        <div class="column col-4 text-center">
+          <!-- mt-2 style pushes down left & right columns -->
+          <div class="card mt-2">
+            <div class="card-image">
+              <img
+                src="{{ url_for('static', filename='images/'+d.filename.raw) }}"
+                class="img-responsive"
+              />
+            </div>
+            <div class="card-header bg-gray">
+              <div class="card-title">
+                <h4>
+                  <a
+                    href="{{ url_for('static', filename='images/'+d.filename.raw) }}"
+                    >{{ d.filename.raw }}</a
+                  >
+                </h4>
+              </div>
+              <!-- .card-title -->
+            </div>
+            <!--- .card-header -->
+            <div class="card-body">
+              <p style="text-align: left;">Description: {{ d.description.raw[:200] }} minutes</p>
+              <p style="text-align: left;">Uploaded on: {{ d.date_time.raw }}</p>
+              <p  style="text-align: left;">Type: {{ d.type.raw }}</p>
+              <p  style="text-align: left;">Tags: {{d.tags.raw}}</p>
+            </div>
+            <!-- .card-body -->
+          </div>
+          <!-- .card -->
+        </div>
+        <!-- .column .col-4 -->
+        {% endfor %}
+      </div>
+      <!-- columns -->
+    </div>
+    <!-- container -->
+
+    {% endblock %}
+  </body>
+</html>

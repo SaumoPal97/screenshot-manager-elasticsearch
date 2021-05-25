@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Screenshot Manager</title>
+  </head>
+  <body>
+    {% extends "template.html" %} {% block search %}
+    <div class="column col-4 text-center">
+      <!-- Without mt-2 style this "pushes up" the center column -->
+      <div class="card navshadow">
+        <form action="/uploader" method="POST" enctype="multipart/form-data">
+          <div class="card-body form-group">
+            <section class="navbar-center">
+              <div class="input-group input-inline">
+                <div class="form-autocomplete">
+                  <div class="form-autocomplete-input">
+                    <input type="file" name="file" />
+                    <input class="btn btn-primary input-group-btn" type="submit" />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- .card-body -->
+        </form>
+      </div>
+      <!-- .card -->
+    </div>
+    <!-- .column .col-4 -->
+    {% endblock %}
+  </body>
+</html>
