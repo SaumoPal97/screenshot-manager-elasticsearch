@@ -10,7 +10,7 @@ I built the web app on the Flask framework using Algorithmic's OCR APIs and Sent
 ## Challenges I ran into
 There wasn't any significant challenge as such apart from finding an interesting idea where search can make wonders happen. Kudos to elasticsearch for being so widely used that there isn't an idea not already solved by elasticsearch :P 
 
-##Accomplishments I am proud of
+## Accomplishments I am proud of
 Getting an important and painful idea to work upon and building it within 7 hours :P
 
 ## What I learned
